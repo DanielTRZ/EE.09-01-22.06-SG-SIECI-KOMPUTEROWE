@@ -21,13 +21,13 @@ function check_if() {
   });
 }
 
-//addButtons.forEach((elem, index) => {
+/*addButtons.forEach((elem, index) => {
 //  elem.addEventListener("click", () => {
  //   let nowaIlosc = window.prompt("Podaj nową ilość");
   //  iloscElems[index].innerHTML = nowaIlosc;
   //  check_if();
 //  });
-//});
+});*/
 addButtons.forEach((elem, index) => {
   elem.addEventListener("click", () => {
     let nowaIlosc;
