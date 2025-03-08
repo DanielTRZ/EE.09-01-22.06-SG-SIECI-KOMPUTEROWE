@@ -21,9 +21,31 @@ function check_if() {
   });
 }
 
+//addButtons.forEach((elem, index) => {
+//  elem.addEventListener("click", () => {
+ //   let nowaIlosc = window.prompt("Podaj nową ilość");
+  //  iloscElems[index].innerHTML = nowaIlosc;
+  //  check_if();
+//  });
+//});
 addButtons.forEach((elem, index) => {
   elem.addEventListener("click", () => {
-    let nowaIlosc = window.prompt("Podaj nową ilość");
+    let nowaIlosc;
+    while (true) {
+      nowaIlosc = window.prompt("Podaj nową ilość (tylko liczby):");
+
+      // Jeśli użytkownik kliknie "Anuluj", przerwij operację
+      if (nowaIlosc === null) return;
+
+      // Sprawdzenie, czy wpisana wartość jest poprawną liczbą
+      if (!isNaN(nowaIlosc) && nowaIlosc.trim() !== "" && Number(nowaIlosc) >= 0) {
+        nowaIlosc = Math.floor(Number(nowaIlosc)); // Konwersja na liczbę całkowitą
+        break;
+      }
+
+      alert("Wprowadź poprawną liczbę!");
+    }
+
     iloscElems[index].innerHTML = nowaIlosc;
     check_if();
   });
